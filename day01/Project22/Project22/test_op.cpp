@@ -19,13 +19,13 @@ int main(void)
 	std::cout << "첫 번째 숫자입력 : ";
 	std::cin >> val1;
 
+	char op;
+	std::cout << "연산자 입력(+, -, x, /) : ";
+	std::cin >> op;
+
 	int val2;
 	std::cout << "두 번째 숫자 입력 : ";
 	std::cin >> val2;
-
-	char op;
-	std::cout << "연산자 입력 : ";
-	std::cin >> op;
 
 
 
