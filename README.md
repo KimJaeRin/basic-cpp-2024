@@ -11,7 +11,9 @@ IoT 개발자 심화 프로그래밍 언어학습 리포지토리
   		- 문자 : 문자(char)/문자열
   	 	- 숫자 : 정수(int)/실수
    	 	- char name[100];
-   	  	- char lang[200];  
+   	  	- char lang[200];
+   	  - 선택 제어문 : if,switch
+   	  - 반복 제어문 : for, while
  
    	   
 ## 2일차 
