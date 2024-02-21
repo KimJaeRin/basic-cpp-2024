@@ -10,17 +10,15 @@ int main()
 	int sum = 0;
 	int i = 1;
 
-	while (true)
-
+	while (i <= 100)
 	{
-		i = i + 1;
-	
-		
-
+		sum = i + sum;
+		i++;
 
 	}
+	cout << sum << endl;
 
-
+	
 
 return 0;
 }
