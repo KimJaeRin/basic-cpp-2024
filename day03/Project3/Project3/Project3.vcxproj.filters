@@ -27,5 +27,16 @@
     <ClCompile Include="test09_RacingCarOuterFunc.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="test11_Car.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test12_RacingMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="car.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
