@@ -33,9 +33,21 @@
     <ClCompile Include="test12_RacingMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="test13_FileDivi.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test14_FileDivi.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="car.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Filedivi.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="human.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
