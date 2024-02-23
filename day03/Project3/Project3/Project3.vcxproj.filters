@@ -24,7 +24,7 @@
     <ClCompile Include="test07_Struct03.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="test_RacingCarEnum.cpp">
+    <ClCompile Include="test09_RacingCarOuterFunc.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

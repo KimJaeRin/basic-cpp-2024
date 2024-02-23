@@ -15,11 +15,11 @@ namespace CAR_CONST
 }
 
 struct Car
-{
+{// 멤버 변수
 	char gamerID[CAR_CONST::ID_LEN]; //배열  '::' = 범위연산자 CAR_CONST에 있는 ID_LEN
 	int fuelGauge;
 	int curSpeed;
-
+	//멤버 함수 선언
 	void ShowCarState();
 	void Accel();
 	void Break();
@@ -33,7 +33,7 @@ void Car::ShowCarState()
 		cout << "현재 속도 : " << curSpeed << "km/s" << endl << endl;
 
 	}
-	void Car:: ACcel()
+	void Car:: Accel()
 	{
 		if (fuelGauge <= 0)
 			return;
@@ -65,8 +65,8 @@ int main(void)
 {
 
 	Car run99 = { "run99", 100, 0 }; //Car타입
-	run99.ACcel(); //98, 10  new 를 쓰지 않아서 힙영역이 아닌 스택에 저장
-	run99.ACcel(); //96, 20
+	run99.Accel(); //98, 10  new 를 쓰지 않아서 힙영역이 아닌 스택에 저장
+	run99.Accel(); //96, 20
 	run99.ShowCarState();
 	run99.Break();
 	run99.ShowCarState();
