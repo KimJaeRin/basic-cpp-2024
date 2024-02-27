@@ -29,7 +29,7 @@ public:
 	{
 		ref.ShowYourName();
 		cout << "and" << endl;
-		cout << "I ref nom " << num << endl;
+		cout << "I ref num " << num << endl;
 	}
 };
 
