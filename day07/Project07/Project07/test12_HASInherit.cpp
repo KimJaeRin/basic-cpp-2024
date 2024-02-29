@@ -2,7 +2,6 @@
 #include <cstring>
 using namespace std;
 
-
 class Gun
 {
 private:
@@ -36,7 +35,7 @@ public:
 	void state()
 	{
 		cout <<getbullet()<<" , "<<handcuffs << endl;
-		handcuffs--;
+
 	}
 };
 
@@ -46,5 +45,10 @@ int main(void)
 	pman.state();
 	pman.shot();
 	pman.PutHandcuff();
+	pman.state();
+	pman.shot();
+	pman.PutHandcuff();
+	pman.state();
 	return 0;
+
 }

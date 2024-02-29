@@ -51,5 +51,8 @@
     <ClCompile Include="test12_HASInherit.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="test13_Myclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
