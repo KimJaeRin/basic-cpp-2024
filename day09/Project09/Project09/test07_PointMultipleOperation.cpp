@@ -12,7 +12,7 @@ public:
 	{
 		cout << '[' << xpos << ", " << ypos << ']' << endl;
 	}
-	Point operator *(int times)
+	Point operator *(int times)  // 다른 타입의 곱하기 가능하게 만드는 코드 연산자 오버로딩
 	{
 		Point pos(xpos * times, ypos * times);
 		return pos;
