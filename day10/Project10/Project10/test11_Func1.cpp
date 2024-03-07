@@ -67,15 +67,15 @@ public:
 
 int main(void)
 {
-   // Grade gradeArr[3] = {};            // 객체 배열 생성 시 생성자 호출됨!
+    Grade gradeArr[60] = {};            // 객체 배열 생성 시 생성자 호출됨!
 
     char name[20];
-    int inKor, inMat, inEng;
+    int inKor, inMat, inEng, num;
     cout << "성적처리 학생 수 : " << endl;
     cin >> num;
 
     // 1. 입력을 받는다.
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < num; i++) {
         cout << "이름 : ";
         cin >> name;
 
@@ -83,7 +83,7 @@ int main(void)
         cin >> inKor;
 
         cout << "영어점수 : ";
-        cin >> inEng;
+        cin >> inEng;s
 
         cout << "수학점수 : ";
         cin >> inMat;
