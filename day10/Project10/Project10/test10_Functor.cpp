@@ -12,6 +12,10 @@ private:
     double average;
 
 public:
+    Grade()
+    { 
+        cout << "생성자 호출" << endl;
+    }
     // 생성자: 학생의 이름과 세 과목의 점수를 받아 초기화
     Grade(const char* name, int kor, int math, int eng) {
         // 이름 복사
@@ -19,6 +23,7 @@ public:
         this->name = new char[len];
         strcpy_s(this->name, len, name);
 
+       
    
         this->kor = kor;
         this->math = math;
@@ -73,16 +78,22 @@ public:
     double getAverage() const {
         return average;
     }
-};
 
-int main() {
+    void ShowPersonInfo() const
+    {
+        cout << " 이름 : " << name << " 국어 : " << kor << "수학 : " << math << " 영어 :" << eng << endl;
+    }
+    };
+
+int main(void) {
+    Grade gradeAry[5];
     const int STUDENTS = 5;
-    Grade* gradeAry[STUDENTS];    // 학생 객체를 포인터 배열
-
+    char name[20];
+    int inko, inEng, inmath;
+    //Grade* gradeAry[STUDENTS];    // 학생 객체를 포인터 배열
   
     for (int i = 0; i < STUDENTS; i++) {
-        char name[20];
-        int inko, inEng, inmath;
+       
 
         cout << "이름: ";
         cin >> name;
@@ -94,19 +105,12 @@ int main() {
         cin >> inEng;
         cout << endl;
 
+        gradeAry[i].ShowPersonInfo();
+
+        
+
        
-        gradeAry[i] = new Grade(name, inko, inmath, inEng);
-    }
-
-    for (int i = 0; i < STUDENTS; i++) {
-        cout << "이름: " << gradeAry[i]->getName() << endl;
-        cout << "국어: " << gradeAry[i]->getKor() << ", 수학: " << gradeAry[i]->getMath() << ", 영어: " << gradeAry[i]->getEng() << endl;
-        cout << "총점: " << gradeAry[i]->getTotal() << ", 평균: " << gradeAry[i]->getAverage() << endl;  // 각 총점과 평균 출력
-        cout << endl;
-    }
-
-    for (int i = 0; i < STUDENTS; i++) {
-        delete gradeAry[i];
+ 
     }
 
     return 0;
