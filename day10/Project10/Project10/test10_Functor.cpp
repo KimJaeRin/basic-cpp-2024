@@ -19,14 +19,14 @@ public:
         this->name = new char[len];
         strcpy_s(this->name, len, name);
 
-        // 과목 점수 설정
+   
         this->kor = kor;
         this->math = math;
         this->eng = eng;
 
         // 총점과 평균 계산
-        calculateTotal();
-        calculateAverage();
+      Total();
+       Average();
     }
 
     // 소멸자: 동적으로 할당된 메모리 해제
@@ -35,12 +35,12 @@ public:
     }
 
     // 총점 계산 함수
-    void calculateTotal() {
+    void Total() {
         total = kor + math + eng;
     }
 
     // 평균 계산 함수
-    void calculateAverage() {
+    void Average() {
         average = total / 3.0;
     }
 
@@ -76,15 +76,14 @@ public:
 };
 
 int main() {
-    const int NUM_STUDENTS = 5;
-    Grade* gradeAry[NUM_STUDENTS];    // 학생 객체를 가리키는 포인터 배열
+    const int STUDENTS = 5;
+    Grade* gradeAry[STUDENTS];    // 학생 객체를 포인터 배열
 
-    // 5명의 학생 정보 입력
-    for (int i = 0; i < NUM_STUDENTS; ++i) {
+  
+    for (int i = 0; i < STUDENTS; i++) {
         char name[20];
         int inko, inEng, inmath;
 
-        // 사용자로부터 학생 정보 입력 받음
         cout << "이름: ";
         cin >> name;
         cout << "국어: ";
@@ -99,15 +98,14 @@ int main() {
         gradeAry[i] = new Grade(name, inko, inmath, inEng);
     }
 
-  
-    for (int i = 0; i < NUM_STUDENTS; ++i) {
+    for (int i = 0; i < STUDENTS; i++) {
         cout << "이름: " << gradeAry[i]->getName() << endl;
         cout << "국어: " << gradeAry[i]->getKor() << ", 수학: " << gradeAry[i]->getMath() << ", 영어: " << gradeAry[i]->getEng() << endl;
-        cout << "총점: " << gradeAry[i]->getTotal() << ", 평균: " << gradeAry[i]->getAverage() << endl;  // 각 학생의 총점과 평균 출력
+        cout << "총점: " << gradeAry[i]->getTotal() << ", 평균: " << gradeAry[i]->getAverage() << endl;  // 각 총점과 평균 출력
         cout << endl;
     }
 
-    for (int i = 0; i < NUM_STUDENTS; ++i) {
+    for (int i = 0; i < STUDENTS; i++) {
         delete gradeAry[i];
     }
 
