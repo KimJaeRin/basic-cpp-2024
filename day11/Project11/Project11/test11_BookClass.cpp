@@ -5,32 +5,31 @@ using namespace std;
 
 class Book
 {
-	char* ISBN;
-	char* author;
-	char* title;
+	string ISBN, author, title;
 
 public:
 	Book()
+	{ }
+
+	Book(string myisbn, string myauthor, string mytitle)
 	{
-		ISBN = NULL;
-		author = NULL;
-		title = NULL;
+		ISBN = myisbn;
+
+		author = myauthor;
+
+		title = mytitle;
 
 	}
-
-	Book(const char* myisbn, const char* myauthor, const char* mytitle)
-	{
-		ISBN = new char[strlen(myisbn) + 1];
-		strcpy(ISBN, myisbn);
-
-		author = new char[strlen(myauthor) + 1];
-		strcpy(author, myauthor);
-
-		title = new char[strlen(mytitle) + 1];
-		strcpy(title, mytitle);
-
-	}
-
-
-
+	void show();
+	string getName() { return title; }
+	string getAut() { return author; }
+	string getISBN() { return ISBN; }
 };
+
+	void Book::show() {
+		cout << "책제목 : " << title << endl;
+		cout << "저자 : " << author << endl;
+		cout << "ISBN : " << ISBN << endl;
+	}
+
+
