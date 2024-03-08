@@ -1,28 +1,32 @@
 #include <iostream>
 #include <cstring>
+
 using namespace std;
 
 class Handphone
 {
-	char* model;
-	int RAM;
+	string model, RAM;
 
 public:
 	Handphone()
+	{ }
+
+	Handphone(int RAM, string model)
 	{
-		model = NULL;
-		RAM = 0;
+		this -> RAM = RAM;
+
+		this -> model = model;
 
 	}
-
-	Handphone(const char* mymodel, int myram)
-	{
-		model = new char[strlen(mymodel) + 1];
-		strcpy(model, mymodel);
-		RAM = myram;
-
-	}
-
-
-
+	void show();
+	string getName() { return model; }
+	string getram() { return RAM; }
 };
+
+void Handphone::show() {
+	cout << "¸ðµ¨¸í : " << model << endl;
+	cout << "RAM : " << RAM << endl;
+
+}
+
+
