@@ -42,5 +42,20 @@
     <ClCompile Include="test09_NeedSpecialFuncTemplate.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="test10_ProductManage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test11_BookClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test12_Handphoneclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test13_ComputerClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="T.T.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
