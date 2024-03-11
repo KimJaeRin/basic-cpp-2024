@@ -20,6 +20,7 @@ public:
 		title = mytitle;
 
 	}
+
 	void show();
 	string getName() { return title; }
 	string getAut() { return author; }
