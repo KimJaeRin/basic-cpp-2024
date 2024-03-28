@@ -1,11 +1,16 @@
+/*
+       File: Product Manager.cpp
+
+       Created: 24-03-06
+       Author: 김재린
+
+    */
+
 #include <iostream>
-#include <cstring>
-#include "test11_BookClass.cpp"
-#include "test12_Handphoneclass.cpp"
-#include "test13_ComputerClass.cpp"
+#include <string>
+#include <vector>
 using namespace std;
 
-// 상품을 나타내는 기본 클래스
 class Product {
 protected:
     int id;
@@ -14,7 +19,7 @@ protected:
 public:
     Product(int _id, double _price, string _producer) : id(_id), price(_price), producer(_producer) {}
 
-    // 가상 함수를 이용하여 파생 클래스에서 재정의 가능한 printInfo 함수 정의
+
     virtual void printInfo() const {
         cout << "ID: " << id << ", Price: " << price << ", Producer: " << producer << endl;
         cout << endl;
@@ -24,13 +29,62 @@ public:
         return id;
     }
 
-    // 가상 소멸자 추가
     virtual ~Product() {}
 };
 
+class Book : public Product {
+private:
+    string ISBN;
+    string author;
+    string title;
+public:
+    Book(int _id, double _price, string _producer, string _ISBN, string _author, string _title)
+        : Product(_id, _price, _producer), ISBN(_ISBN), author(_author), title(_title) {}
+
+    void printInfo() const override {
+        Product::printInfo();
+        cout << "ISBN: " << ISBN << ", Author: " << author << ", Title: " << title << endl;
+    }
+};
+
+class Handphone : public Product {
+private:
+    string model;
+    int ram;
+public:
+    Handphone(int _id, double _price, string _producer, string _model, int _ram)
+        : Product(_id, _price, _producer), model(_model), ram(_ram) {}
+
+
+    void printInfo() const override {
+        Product::printInfo();
+        cout << "Model: " << model << ", RAM: " << ram << "GB" << endl;
+    }
+};
+
+
+class Computer : public Product {
+private:
+    string model;
+    string cpu;
+    int ram;
+public:
+    Computer(int _id, double _price, string _producer, string _model, string _cpu, int _ram)
+        : Product(_id, _price, _producer), model(_model), cpu(_cpu), ram(_ram) {}
+
+    void printInfo() const override {
+        Product::printInfo();
+        cout << "Model: " << model << ", CPU: " << cpu << "GB" << ", RAM: " << ram << "GB" << endl;
+    }
+};
+
+
+void addProduct(vector<Product*>& products);
+void printProducts(const vector<Product*>& products);
+void searchProduct(const vector<Product*>& products);
 
 int main() {
-    vector<Product*> products; // Product 객체를 담는 벡터 선언
+    vector<Product*> products; 
 
     int choice;
     while (true) {
@@ -41,19 +95,18 @@ int main() {
         cout << endl;
 
         switch (choice) {
-        case 0: // 종료
-            // 동적 할당한 객체들 삭제
+        case 0: 
             for (auto& product : products) {
                 delete product;
             }
             return 0;
-        case 1: // 상품 추가
+        case 1: 
             addProduct(products);
             break;
-        case 2: // 상품 출력
+        case 2: 
             printProducts(products);
             break;
-        case 3: // 상품 검색
+        case 3: 
             searchProduct(products);
             break;
         default:
@@ -65,7 +118,6 @@ int main() {
     return 0;
 }
 
-// 상품 추가 함수
 void addProduct(vector<Product*>& products) {
     int productType;
     cout << "1. 책 2. 핸드폰 3. 컴퓨터" << endl;
@@ -94,7 +146,7 @@ void addProduct(vector<Product*>& products) {
         cout << endl;
         products.push_back(new Book(id, price, producer, ISBN, author, title));
     }
-    else if (productType == 2) { // 핸드폰
+    else if (productType == 2) { 
         string model;
         int ram;
         cout << "Model: ";
@@ -104,7 +156,7 @@ void addProduct(vector<Product*>& products) {
         cout << endl;
         products.push_back(new Handphone(id, price, producer, model, ram));
     }
-    else if (productType == 3) { // 컴퓨터
+    else if (productType == 3) { 
         string model, cpu;
         int ram;
         cout << "Model: ";
@@ -118,7 +170,7 @@ void addProduct(vector<Product*>& products) {
     }
 }
 
-// 상품 출력 함수
+
 void printProducts(const vector<Product*>& products) {
     cout << "상품 출력" << endl;
     for (const auto& product : products) {
@@ -127,7 +179,7 @@ void printProducts(const vector<Product*>& products) {
     }
 }
 
-// 상품 검색 함수
+
 void searchProduct(const vector<Product*>& products) {
     cout << "상품 검색" << endl;
     int searchId;
@@ -150,30 +202,3 @@ void searchProduct(const vector<Product*>& products) {
         cout << endl;
     }
 }
-
-/*
-프로그램 돌렸을때 3 상품 검색
-// 상품 검색 함수
-void searchProduct(const vector<Product*>& products) {
-    cout << "상품 검색" << endl;
-    int searchId;
-    cout << "검색할 상품의 ID를 입력하세요: ";
-    cin >> searchId;
-    cout << endl;
-
-    bool found = false;
-    for (const auto& product : products) {
-        if (product->getID() == searchId) {
-            product->printInfo();
-            found = true;
-            break;
-        }
-    }
-
-    if (!found) {
-        cout << "해당 ID의 상품을 찾을 수 없습니다." << endl;
-        cout << endl;
-    }
-}
-
-*/
